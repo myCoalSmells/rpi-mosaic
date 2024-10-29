@@ -7,7 +7,7 @@ import time
 app = Flask(__name__)
 
 def capture_photo(camera_index, output_file):
-    subprocess.run(['libcamera-jpeg', '-n', '--camera', str(camera_index), '-o', output_file])
+    subprocess.run(['libcamera-jpeg', '-n', '--camera', str(camera_index), '-t', '100', '-o', output_file])
 
 def capture_and_stitch():
     # for parralel image capture
